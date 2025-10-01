@@ -1,68 +1,192 @@
-h1
-{   
-    color: rgb(52, 123, 182);
-    font-size: 80px;
-    text-align: center;
-    background-color: rgba(235, 235, 235, 0.918);
+/* RESET BÁSICO E CONFIGURAÇÕES GLOBAIS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-h2 
-{   
-color: rgb(255, 255, 255);
-
+:root {
+    /* Paleta de Cores: Profissional e Acessível */
+    --primary-color: #007bff; /* Azul vibrante - confianca/tecnologia */
+    --secondary-color: #28a745; /* Verde - crescimento/renovacao */
+    --text-dark: #333;
+    --text-light: #f8f9fa;
+    --bg-light: #f8f9fa;
+    --bg-white: #fff;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-p
-
-{
-    color: rgb(255, 255, 255);
+body {
+    font-family: 'Poppins', sans-serif; /* Fonte moderna e legível */
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--bg-light);
 }
 
-h3 {    
-
-    color: rgb(255, 255, 255);
-
-
+a {
+    text-decoration: none;
+    color: var(--primary-color);
 }
 
-h5 img{    
-    color: rgb(255, 255, 255);
-
-
-    
+a:hover {
+    text-decoration: underline;
+    color: #0056b3; /* Tonalidade mais escura no hover */
 }
 
-h5 p{    
-    color: rgb(255, 255, 255);
-
-    text-align: center;
-    font-size: 40;
-}
-
-ul {    
-    color: rgb(255, 255, 255);
-
-
-}
-
-
-body {  
-    background-color: rgb(25, 21, 245);
-}
-
-header img 
-{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-}
-
-h6 a {
-    color: rgb(247, 249, 250);
-    display:flex;
-    justify-content: center;
+/* -------------------- CABEÇALHO/NAV -------------------- */
+.main-header {
+    background-color: var(--bg-white);
+    color: var(--text-dark);
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
+    box-shadow: var(--shadow);
+    position: sticky; /* Fixo no topo ao rolar */
+    top: 0;
+    z-index: 1000;
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.logo .plus {
+    color: var(--secondary-color);
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.main-nav a {
+    font-weight: 600;
+    color: var(--text-dark);
+    transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+/* -------------------- SEÇÕES DE CONTEÚDO -------------------- */
+.hero img {
+    width: 100%;
+    max-height: 400px; /* Limite de altura para banners */
+    object-fit: cover; /* Garante que a imagem cubra a área sem distorção */
+}
+
+.section-content, .contact-section {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px 5%;
+    background-color: var(--bg-white);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--secondary-color);
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+}
+
+h3 {
+    font-size: 1.4rem;
+    color: var(--text-dark);
+    margin-top: 20px;
+}
+
+.proposta-detalhe {
+    margin-top: 15px;
+    padding-left: 15px;
+    border-left: 3px solid var(--primary-color);
+}
+
+/* Lista de Informações */
+.group-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.group-info li {
+    background-color: var(--bg-light);
+    margin-bottom: 10px;
+    padding: 10px;
+    border-left: 5px solid var(--secondary-color);
+    border-radius: 4px;
+}
+
+.group-info strong {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+/* -------------------- CONTATO -------------------- */
+.contact-section {
+    text-align: center;
+    padding-bottom: 40px;
+}
+
+.social-link {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: 600;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+}
+
+.social-link:hover {
+    background-color: #0056b3;
+    text-decoration: none;
+}
+
+.contact-image {
+    max-width: 250px;
     height: auto;
-    font-size: 20px;
+    border-radius: 8px;
+    margin-top: 15px;
+    border: 1px solid var(--bg-light);
+}
+
+/* -------------------- RODAPÉ -------------------- */
+.main-footer {
+    background-color: var(--text-dark);
+    color: var(--text-light);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    font-size: 0.9rem;
+}
+
+/* -------------------- RESPONSIVIDADE (Móvel) -------------------- */
+@media (max-width: 768px) {
+    .main-header {
+        flex-direction: column;
+        gap: 10px;
+        padding: 1rem 3%;
+    }
+
+    .main-nav ul {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .hero img {
+        max-height: 250px;
+    }
 }
