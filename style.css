@@ -85,7 +85,8 @@ a:hover {
 
 .hero p img {
 border-radius: 50% 35%;
-    width: 90%;
+text-align: center;
+    width: 95%;
     max-height: 300px; /* Limite de altura para banners */
     object-fit: cover; /* Garante que a imagem cubra a área sem distorção */
 }
